@@ -23,6 +23,7 @@ const Book = sequelize.define('Book', {
   
   
 }, {
+  
   timestamps: true,
 });
 
@@ -30,7 +31,7 @@ const Book = sequelize.define('Book', {
 
 
 // Relationships
-Book.belongsTo(BookCategory, { foreignKey: 'categoryId', as: 'category' });
+Book.belongsTo(BookCategory, { foreignKey: 'categoryId', as: 'category' });//category means the name of the relationship
 BookCategory.hasMany(Book, { foreignKey: 'categoryId', as: 'books' });
 
 export default Book;
